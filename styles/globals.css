@@ -1,107 +1,123 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Kumbh+Sans:wght@300;400;700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,500;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Poppins", sans-serif;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.font-pop {
+  font-family: "Poppins";
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.form-css {
+  @apply flex flex-col gap-4 px-6 py-8 rounded-lg shadow-md bg-inherit;
+}
+
+.bttn {
+  @apply flex items-center justify-center w-full px-8 py-3 text-base font-medium border border-transparent rounded-md;
+}
+
+.bttn-2 {
+  @apply w-fit flex items-center justify-center px-6 py-1.5 border border-transparent text-base font-medium rounded-md;
+}
+
+.bttn-3 {
+  @apply flex items-center justify-center w-full px-4 py-2 text-base font-medium border border-transparent rounded-md lg:w-fit lg:px-2;
+}
+
+.bttn-4 {
+  @apply flex items-center justify-center px-8 py-3 text-base font-medium border border-transparent rounded-md w-fit;
+}
+
+.bttn-5 {
+  @apply flex items-center justify-center px-2 py-2 text-xs font-medium border border-transparent rounded-md sm:text-sm;
+}
+
+.bttn-primary {
+  @apply text-white bg-indigo-600 hover:bg-indigo-700 md:text-base;
+}
+
+.bttn-primary-2 {
+  @apply text-white bg-indigo-600 hover:bg-indigo-700;
+}
+
+.bttn-secondary {
+  @apply text-indigo-700 bg-indigo-300 hover:bg-indigo-200 md:text-base;
+}
+
+.bttn-secondary-2 {
+  @apply text-indigo-700 bg-indigo-300 hover:bg-indigo-200;
+}
+
+.bttn-Gamer {
+  @apply border-2 border-indigo-500 bg-inherit hover:bg-indigo-500 hover:border-transparent;
+}
+
+.bg-ld {
+  @apply bg-slate-100 dark:bg-[#202020];
+}
+
+.bg-ld-nft {
+  @apply bg-slate-100 dark:bg-slate-800;
+}
+
+.bg-nav {
+  @apply bg-slate-100 dark:bg-slate-900;
+}
+
+.text-ld {
+  @apply text-slate-900 dark:text-slate-100;
+}
+
+.text-ind {
+  @apply text-indigo-700 dark:text-indigo-500;
+}
+
+.text-small {
+  @apply text-slate-600 dark:text-slate-100;
+}
+
+.form-input {
+  @apply w-full px-3 py-2 text-sm placeholder-transparent bg-transparent border border-gray-300 rounded shadow-sm text-ld focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500;
+}
+
+.form-label {
+  @apply absolute px-2 text-xs font-medium text-indigo-500 left-3 -top-4 bg-inherit peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 dark:peer-placeholder-shown:text-gray-200 peer-placeholder-shown:font-medium peer-placeholder-shown:top-2 peer-placeholder-shown:left-3 peer-placeholder-shown:mt-0 peer-focus:left-3 peer-focus:bg-inherit peer-focus:-top-2 peer-focus:px-2 peer-focus:text-indigo-500 peer-focus:text-xs peer-focus:font-medium;
+}
+
+.trans {
+  @apply transition-all duration-300 ease-in;
+}
+
+.ninety-vh {
+  height: 90vh;
+}
+
+.eighty-vh {
+  height: 70vh;
+}
+
+.shadow-me {
+  box-shadow: 0 1px 1px hsl(0deg 0% 0% / 8%), 0 2px 2px hsl(0deg 0% 0% / 8%),
+    0 4px 4px hsl(0deg 0% 0% / 8%), 0 8px 8px hsl(0deg 0% 0% / 8%),
+    0 16px 16px hsl(0deg 0% 0% / 8%);
+}
+
+@font-face {
+  font-family: ultra;
+  src: url(../public/Petrona-Regular.ttf);
+}
+.ultra {
+  font-family: ultra;
+}
+
+@font-face {
+  font-family: jiggies;
+  src: url(../public/FredokaOne-Regular.ttf);
+}
+.fdkRegular {
+  font-family: jiggies;
 }
