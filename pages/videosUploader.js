@@ -1,13 +1,13 @@
 import React from "react";
 import Head from "next/head";
-import { NavbarHead, Footer } from "@/components";
+import { NavbarHead, Footer, DualVideoUploader } from "@/components";
 import { AppShell, ScrollArea } from "@mantine/core";
 
-export default function stream() {
+export default function videosUploader() {
   return (
     <>
       <Head>
-        <title>Stream - GameFi Social Platform</title>
+        <title>Uploader Stream - GameFi Social Platform</title>
         <meta
           name="description"
           content="Dedicated to empowering gamers to trade their collections on the decentralized Filecoin network."
@@ -17,7 +17,9 @@ export default function stream() {
       </Head>
 
       <AppShell header={<NavbarHead />} footer={<Footer />}>
-        <ScrollArea>Stream room</ScrollArea>
+        <ScrollArea>
+          <DualVideoUploader />
+        </ScrollArea>
       </AppShell>
     </>
   );

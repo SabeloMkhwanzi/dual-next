@@ -105,6 +105,7 @@ export default function NavbarHead() {
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   <Button
+                    fullWidth
                     variant="default"
                     radius="md"
                     className={classes.linkLabel}
@@ -121,6 +122,7 @@ export default function NavbarHead() {
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   <Button
+                    fullWidth
                     variant="default"
                     radius="md"
                     className={classes.linkLabel}
@@ -130,21 +132,25 @@ export default function NavbarHead() {
                     </Text>
                   </Button>
                 </Link>
+                <Link
+                  exact="true"
+                  href="/createCollection"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Button
+                    fullWidth
+                    variant="default"
+                    radius="md"
+                    className={classes.linkLabel}
+                  >
+                    <Text fw="500" fz="md" className="ultra">
+                      Create Collection
+                    </Text>
+                  </Button>
+                </Link>
               </Stack>
             </Popover.Dropdown>
           </Popover>
-
-          <Link
-            exact="true"
-            href="/createCollection"
-            style={{ color: "inherit", textDecoration: "inherit" }}
-          >
-            <Button variant="default" radius="md" className={classes.linkLabel}>
-              <Text fw="500" fz="md" className="ultra">
-                Create collection
-              </Text>
-            </Button>
-          </Link>
 
           <Link
             style={{ color: "inherit", textDecoration: "inherit" }}
@@ -153,20 +159,142 @@ export default function NavbarHead() {
             <Button variant="default" radius="md" className={classes.linkLabel}>
               <Text fw="500" fz="md" className="ultra">
                 {" "}
-                Meeting Room
+                Huddle01
               </Text>
             </Button>
           </Link>
-          <Link
-            style={{ color: "inherit", textDecoration: "inherit" }}
-            href="/stream"
-          >
-            <Button variant="default" radius="md" className={classes.linkLabel}>
-              <Text fw="500" fz="md" className="ultra">
-                Stream Room
-              </Text>
-            </Button>
-          </Link>
+          <Popover trapFocus position="bottom" withArrow shadow="md">
+            <Popover.Target>
+              <Button
+                variant="default"
+                radius="md"
+                className={classes.linkLabel}
+              >
+                <Text fw="500" fz="md" className="ultra">
+                  Dual Stream
+                </Text>
+              </Button>
+            </Popover.Target>
+            <Popover.Dropdown
+              sx={(theme) => ({
+                background:
+                  theme.colorScheme === "dark"
+                    ? theme.colors.dark[7]
+                    : theme.white,
+              })}
+            >
+              <Stack>
+                <Link
+                  exact="true"
+                  href="/createLivestream"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Button
+                    fullWidth
+                    variant="default"
+                    radius="md"
+                    className={classes.linkLabel}
+                  >
+                    <Text fw="500" fz="md" className="ultra">
+                      Create Stream
+                    </Text>
+                  </Button>
+                </Link>
+
+                <Link
+                  exact="true"
+                  href="/joinLiveStream"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Button
+                    fullWidth
+                    variant="default"
+                    radius="md"
+                    className={classes.linkLabel}
+                  >
+                    <Text fw="500" fz="md" className="ultra">
+                      Join Stream
+                    </Text>
+                  </Button>
+                </Link>
+
+                <Link
+                  exact="true"
+                  href="/premium"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Button
+                    fullWidth
+                    variant="default"
+                    radius="md"
+                    className={classes.linkLabel}
+                  >
+                    <Text fw="500" fz="md" className="ultra">
+                      Premium Stream
+                    </Text>
+                  </Button>
+                </Link>
+              </Stack>
+            </Popover.Dropdown>
+          </Popover>
+
+          <Popover trapFocus position="bottom" withArrow shadow="md">
+            <Popover.Target>
+              <Button
+                variant="default"
+                radius="md"
+                className={classes.linkLabel}
+              >
+                <Text fw="500" fz="md" className="ultra">
+                  Videos
+                </Text>
+              </Button>
+            </Popover.Target>
+            <Popover.Dropdown
+              sx={(theme) => ({
+                background:
+                  theme.colorScheme === "dark"
+                    ? theme.colors.dark[7]
+                    : theme.white,
+              })}
+            >
+              <Stack>
+                <Link
+                  exact="true"
+                  href="/videosUploader"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Button
+                    fullWidth
+                    variant="default"
+                    radius="md"
+                    className={classes.linkLabel}
+                  >
+                    <Text fw="500" fz="md" className="ultra">
+                      Upload Videos
+                    </Text>
+                  </Button>
+                </Link>
+
+                <Link
+                  exact="true"
+                  href="/videos"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Button
+                    fullWidth
+                    variant="default"
+                    radius="md"
+                    className={classes.linkLabel}
+                  >
+                    <Text fw="500" fz="md" className="ultra">
+                      Videos
+                    </Text>
+                  </Button>
+                </Link>
+              </Stack>
+            </Popover.Dropdown>
+          </Popover>
         </Group>
 
         <Group className={classes.linkLabel}>
