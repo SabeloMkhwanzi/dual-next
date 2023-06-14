@@ -28,8 +28,7 @@ const Meetingroom = () => {
 
   useEffect(() => {
     // its preferable to use env vars to store projectId
-    initialize("VwTZ4AGTxme9snANex9tep3NwvVMGfYd");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    initialize("KL1r3E1yHfcrRbXsT4mcE-3mK60Yc3YR");
   }, []);
   return (
     <div className="flex items-center justify-center w-full min-h-screen">
@@ -49,7 +48,7 @@ const Meetingroom = () => {
           className="tracking-wider ultra"
           variant="default"
           enabled={joinLobby.isCallable}
-          onClick={() => joinLobby("2222")}
+          onClick={() => joinLobby("TEST01")}
         >
           Join Lobby
         </Button>

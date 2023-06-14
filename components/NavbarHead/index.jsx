@@ -12,7 +12,7 @@ import {
 //import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import ConnectWallet from "../ConnectWallet";
-import { ProjectLogo } from "..";
+import { ColorModeButton, ProjectLogo } from "..";
 //import PushNotifiction from "../PushNotifiction";
 
 const HEADER_HEIGHT = 100;
@@ -148,7 +148,7 @@ export default function NavbarHead() {
 
           <Link
             style={{ color: "inherit", textDecoration: "inherit" }}
-            href="/meetingroom"
+            href="/meetings"
           >
             <Button variant="default" radius="md" className={classes.linkLabel}>
               <Text fw="500" fz="md" className="ultra">
@@ -159,7 +159,7 @@ export default function NavbarHead() {
           </Link>
           <Link
             style={{ color: "inherit", textDecoration: "inherit" }}
-            href="/Streamroom"
+            href="/stream"
           >
             <Button variant="default" radius="md" className={classes.linkLabel}>
               <Text fw="500" fz="md" className="ultra">
@@ -171,7 +171,9 @@ export default function NavbarHead() {
 
         <Group className={classes.linkLabel}>
           {/* <PushNotifiction /> */}
-          <div className={classes.links}>{/* <ColorModeButton /> */}</div>
+          <div className={classes.links}>
+            <ColorModeButton />
+          </div>
           <ConnectWallet />
         </Group>
       </Container>
