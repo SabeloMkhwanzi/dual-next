@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { NavbarHead, Footer, DualVideos } from "@/components";
+import { NavbarHead, Footer, DualVideos } from "../components";
 import { AppShell, ScrollArea } from "@mantine/core";
 
 export default function videos() {

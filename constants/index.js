@@ -1,5 +1,23 @@
-export const ARTIST_CONTRACT_ADDRESS =
-  "0xe2A47d537419698D6f054bf9321435b42E651060";
+const APP_NAME = "Dual Videos";
+const APP_DESCRIPTION =
+  "Dedicated to empowering gamers to trade their collections on the decentralized Filecoin network.";
+const APP_VERSION = "0.0.1";
+const CONTRACT_ADDRESS = "0xF83d35AFC2Ee6F6627aF8c7e6D86eF8bfbc5f001"; // Ourtube at deployed 0xF83d35AFC2Ee6F6627aF8c7e6D86eF8bfbc5f001
+const ARTIST_CONTRACT_ADDRESS = "0xe2A47d537419698D6f054bf9321435b42E651060";
+const FACTORY_ADDRESS = "0x9326AE9537fbb8B80f08fD5c0AFF5F0d517Cf078";
+const IPFS_GATEWAY = "https://gateway.lighthouse.storage/ipfs/";
+const LIVEPEER_KEY = process.env.NEXT_PUBLIC_LIVEPEER_KEY;
+
+export {
+  APP_NAME,
+  APP_DESCRIPTION,
+  APP_VERSION,
+  CONTRACT_ADDRESS,
+  IPFS_GATEWAY,
+  LIVEPEER_KEY,
+  ARTIST_CONTRACT_ADDRESS,
+  FACTORY_ADDRESS,
+};
 
 export const ARTIST_ABI = [
   {
@@ -259,7 +277,7 @@ export const ARTIST_ABI = [
   },
 ];
 
-export const FACTORY_ADDRESS = "0x9326AE9537fbb8B80f08fD5c0AFF5F0d517Cf078";
+// export const FACTORY_ADDRESS = "0x9326AE9537fbb8B80f08fD5c0AFF5F0d517Cf078";
 
 export const FACTORY_ABI = [
   {

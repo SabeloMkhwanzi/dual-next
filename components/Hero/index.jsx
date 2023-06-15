@@ -11,9 +11,9 @@ import {
 } from "@mantine/core";
 
 import { IconCheck } from "@tabler/icons-react";
-import About from "../About";
-import Features from "../Feature";
-import Sponsor from "../Sponsor";
+import About from "./About";
+import Features from "./Feature";
+import Sponsor from "./Sponsor";
 
 const useStyles = createStyles((theme) => ({
   inner: {

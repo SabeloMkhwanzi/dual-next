@@ -1,7 +1,7 @@
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import React, { useState, useMemo } from "react";
 import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
-
+import { Toaster } from "react-hot-toast";
 // Rainbowkit wallet
 import "@rainbow-me/rainbowkit/styles.css";
 import { RainbowKitProvider, getDefaultWallets } from "@rainbow-me/rainbowkit";
@@ -82,6 +82,7 @@ export default function App(props) {
                 client={livepeerClient}
               >
                 <Component {...pageProps} />
+                <Toaster />
               </LivepeerConfig>
             </RainbowKitProvider>
           </WagmiConfig>

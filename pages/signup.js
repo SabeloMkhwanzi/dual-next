@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { SignUp, NavbarHead, Footer } from "@/components";
+import { SignUp, NavbarHead, Footer } from "../components";
 import { AppShell, ScrollArea } from "@mantine/core";
 
 export default function signup() {

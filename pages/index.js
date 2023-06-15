@@ -1,17 +1,7 @@
 import Head from "next/head";
-// import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import {
-  Footer,
-  NavbarHead,
-  Hero,
-  About,
-  Features,
-  Sponsor,
-} from "@/components";
-import { AppShell, ScrollArea } from "@mantine/core";
 
-// const inter = Inter({ subsets: ["latin"] });
+import { Footer, NavbarHead, Hero, About, Sponsor } from "../components";
+import { AppShell, ScrollArea } from "@mantine/core";
 
 export default function Home() {
   return (

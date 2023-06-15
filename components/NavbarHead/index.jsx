@@ -260,7 +260,7 @@ export default function NavbarHead() {
             >
               <Stack>
                 <Link
-                  exact="true"
+                  //exact="true"
                   href="/videosUploader"
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
@@ -278,7 +278,7 @@ export default function NavbarHead() {
 
                 <Link
                   exact="true"
-                  href="/videos"
+                  href="/videosHome"
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   <Button
@@ -289,6 +289,22 @@ export default function NavbarHead() {
                   >
                     <Text fw="500" fz="md" className="ultra">
                       Videos
+                    </Text>
+                  </Button>
+                </Link>
+                <Link
+                  exact="true"
+                  href="/"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Button
+                    fullWidth
+                    variant="default"
+                    radius="md"
+                    className={classes.linkLabel}
+                  >
+                    <Text fw="500" fz="md" className="ultra">
+                      Premium Videos
                     </Text>
                   </Button>
                 </Link>
