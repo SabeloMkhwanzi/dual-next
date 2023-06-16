@@ -110,6 +110,7 @@ export function Hero() {
             </Group>
           </div>
           <Image
+            alt=""
             src="https://guarda.com/assets/images/academy/thumbs/best-nft-games.png"
             className={classes.image}
           />

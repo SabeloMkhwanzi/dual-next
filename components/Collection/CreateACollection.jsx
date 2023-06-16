@@ -283,7 +283,7 @@ const CreateACollection = () => {
                     </th>
                     <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                       <div className=" w-14 square aspect-square rounded-full border-[3px] overflow-hidden">
-                        <img
+                        <Image
                           src={item.imageUrl}
                           alt="Preview"
                           className="object-cover object-center w-full h-full"

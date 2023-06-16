@@ -44,6 +44,7 @@ export default function Video() {
 
   useEffect(() => {
     fetchVideos();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
