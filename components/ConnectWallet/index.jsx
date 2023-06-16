@@ -43,7 +43,12 @@ export default function ConnectWallet() {
                     leftIcon={<IoWallet size={"28px"} color="#4338CA" />}
                     onClick={openConnectModal}
                   >
-                    <Text color="gray.5" fw="700" className="ultra">
+                    <Text
+                      style={{ letterSpacing: "0.3px" }}
+                      color="gray.5"
+                      fw="700"
+                      className="ultra"
+                    >
                       Connect Wallet
                     </Text>
                   </Button>
@@ -76,7 +81,12 @@ export default function ConnectWallet() {
                     onClick={openAccountModal}
                     leftIcon={<IoWallet size={"28px"} color="#4338CA" />}
                   >
-                    <Text color="gray.5" fw="700" className="ultra">
+                    <Text
+                      style={{ letterSpacing: "0.3px" }}
+                      color="gray.5"
+                      fw="700"
+                      className="ultra"
+                    >
                       {account.displayName}
                     </Text>
                   </Button>

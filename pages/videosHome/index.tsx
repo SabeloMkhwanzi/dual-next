@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-key */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import { NavbarHead, Footer } from "../../components";
 import { AppShell, ScrollArea } from "@mantine/core";
 import { Background, Video } from "../../components";
-import { Header, Sidebar } from "../../layout";
+import { HeaderNav, Sidebar } from "../../layout";
 import { getContract } from "../../utils/";
 
 export default function VideosHome() {
@@ -63,15 +63,21 @@ export default function VideosHome() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppShell header={<NavbarHead />} footer={<Footer />}>
+      <AppShell
+        header={
+          <HeaderNav search={(text) => filterData(text)} links={undefined} />
+        }
+        navbar={
+          <Sidebar
+            updateCategory={(category) => filterBasedOnCategory(category)}
+          />
+        }
+        footer={<Footer />}
+      >
         <ScrollArea>
           <Background className="w-full">
             <div className="flex flex-row w-full">
-              {/* <Sidebar
-                updateCategory={(category) => filterBasedOnCategory(category)}
-              /> */}
               <div className="flex flex-col flex-1 h-screen">
-                {/* <Header search={(text) => filterData(text)} /> */}
                 <div className="flex flex-row flex-wrap">
                   {loading ? (
                     <>

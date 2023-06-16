@@ -16,10 +16,11 @@ export default function ProjectLogo() {
   return (
     <Link style={{ color: "inherit", textDecoration: "inherit" }} href="/">
       <Image
+        my={5}
         src="/duallogo1.png"
         alt="13"
-        width={160}
-        height={90}
+        width={150}
+        height={80}
         priority
         className={classes.links}
       />

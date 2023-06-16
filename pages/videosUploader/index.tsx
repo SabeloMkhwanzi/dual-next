@@ -7,7 +7,7 @@ import Background from "../../components/Background";
 import { getContract } from "../../utils/";
 import lighthouse from "@lighthouse-web3/sdk";
 import { NavbarHead, Footer } from "../../components";
-import { AppShell, ScrollArea } from "@mantine/core";
+import { AppShell, Image, ScrollArea } from "@mantine/core";
 import Head from "next/head";
 
 export default function VideosUploader() {
@@ -178,7 +178,7 @@ export default function VideosUploader() {
                       className="flex items-center justify-center w-64 p-2 mt-2 border-2 border-dashed rounded-md border-borderWhiteGray h-36 dark:border-gray-600"
                     >
                       {thumbnail ? (
-                        <img
+                        <Image
                           onClick={() => {
                             thumbnailRef.current.click();
                           }}

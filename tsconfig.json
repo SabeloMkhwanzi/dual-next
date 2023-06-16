@@ -43,7 +43,9 @@
     "utils/contract.js",
     "constants/colors.js",
     "constants/index.js",
-    "pages/video/[id].js"
+    "pages/video/[id].js",
+    "layout/HeaderNav.jsx",
+    "layout/Sidebar.tsx"
   ],
   "exclude": ["node_modules"]
 }

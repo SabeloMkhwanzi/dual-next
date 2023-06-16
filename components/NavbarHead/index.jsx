@@ -84,7 +84,7 @@ export default function NavbarHead() {
                 radius="lg"
                 className={classes.linkLabel}
               >
-                <Text fw="500" fz="md" className="ultra">
+                <Text color="gray.5" fw="700" className="ultra">
                   Gamers
                 </Text>
               </Button>
@@ -126,7 +126,12 @@ export default function NavbarHead() {
                     radius="md"
                     className={classes.linkLabel}
                   >
-                    <Text fw="500" fz="md" className="ultra">
+                    <Text
+                      style={{ letterSpacing: "0.3px" }}
+                      fw="500"
+                      fz="md"
+                      className="ultra"
+                    >
                       Gamers
                     </Text>
                   </Button>
@@ -157,8 +162,13 @@ export default function NavbarHead() {
                 radius="lg"
                 className={classes.linkLabel}
               >
-                <Text fw="500" fz="md" className="ultra">
-                  Dual Stream
+                <Text
+                  style={{ letterSpacing: "0.3px" }}
+                  color="gray.5"
+                  fw="700"
+                  className="ultra"
+                >
+                  Streams
                 </Text>
               </Button>
             </Popover.Target>
@@ -224,7 +234,7 @@ export default function NavbarHead() {
               </Stack>
             </Popover.Dropdown>
           </Popover>
-
+          <ColorModeButton />
           <Popover trapFocus position="bottom" withArrow shadow="md">
             <Popover.Target>
               <Button
@@ -232,7 +242,7 @@ export default function NavbarHead() {
                 radius="lg"
                 className={classes.linkLabel}
               >
-                <Text fw="500" fz="md" className="ultra">
+                <Text color="gray.5" fw="700" className="ultra">
                   Videos
                 </Text>
               </Button>
@@ -274,7 +284,12 @@ export default function NavbarHead() {
                     radius="md"
                     className={classes.linkLabel}
                   >
-                    <Text fw="500" fz="md" className="ultra">
+                    <Text
+                      style={{ letterSpacing: "0.3px" }}
+                      fw="500"
+                      fz="md"
+                      className="ultra"
+                    >
                       Videos
                     </Text>
                   </Button>
@@ -305,7 +320,12 @@ export default function NavbarHead() {
                 radius="lg"
                 className={classes.linkLabel}
               >
-                <Text fw="500" fz="md" className="ultra">
+                <Text
+                  style={{ letterSpacing: "0.3px" }}
+                  color="gray.5"
+                  fw="700"
+                  className="ultra"
+                >
                   Chat
                 </Text>
               </Button>
@@ -355,7 +375,6 @@ export default function NavbarHead() {
               </Stack>
             </Popover.Dropdown>
           </Popover>
-          <ColorModeButton />
         </Group>
 
         <Group className={classes.linkLabel}>
