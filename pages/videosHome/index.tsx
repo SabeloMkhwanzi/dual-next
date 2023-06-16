@@ -28,21 +28,21 @@ export default function VideosHome() {
     setLoading(false);
   };
 
-  const filterBasedOnCategory = (category) => {
+  const filterBasedOnCategory = (category: string) => {
     console.log(category);
     if (category === "All") {
       setVideos(AllVideos);
     } else {
-      let filteredVideos = AllVideos.filter((video) => {
+      let filteredVideos = AllVideos.filter((video: { category: string }) => {
         return video.category.toLowerCase().includes(category.toLowerCase());
       });
       setVideos(filteredVideos);
     }
   };
 
-  const filterData = (e) => {
+  const filterData = (e: any) => {
     let search = e;
-    let filteredVideos = AllVideos.filter((video) => {
+    let filteredVideos = AllVideos.filter((video: { title: string }) => {
       return video.title.toLowerCase().includes(search.toLowerCase());
     });
     setVideos(filteredVideos);
@@ -64,12 +64,10 @@ export default function VideosHome() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <AppShell
-        header={
-          <HeaderNav search={(text) => filterData(text)} links={undefined} />
-        }
+        header={<HeaderNav search={(text: any) => filterData(text)} />}
         navbar={
           <Sidebar
-            updateCategory={(category) => filterBasedOnCategory(category)}
+            updateCategory={(category: any) => filterBasedOnCategory(category)}
           />
         }
         footer={<Footer />}
