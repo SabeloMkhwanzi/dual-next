@@ -1,6 +1,6 @@
 /* eslint-disable react/no-children-prop */
 import React, { useState, useEffect, useRef } from "react";
-import { Sidebar, Header } from "../../layout";
+import { Sidebar, HeaderNav } from "../../layout";
 import { BiCloud, BiPlus } from "react-icons/bi";
 import { Upload } from "../../components";
 import Background from "../../components/Background";
@@ -68,6 +68,14 @@ export default function VideosUploader() {
     );
   };
 
+  function filterBasedOnCategory(category: any) {
+    throw new Error("Function not implemented.");
+  }
+
+  function filterData(text: any) {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <>
       <Head>
@@ -79,7 +87,15 @@ export default function VideosUploader() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <AppShell header={<NavbarHead />} footer={<Footer />}>
+      <AppShell
+        header={<HeaderNav search={(text: any) => filterData(text)} />}
+        navbar={
+          <Sidebar
+            updateCategory={(category: any) => filterBasedOnCategory(category)}
+          />
+        }
+        footer={<Footer />}
+      >
         <ScrollArea>
           <Background className="w-full">
             <div className="flex flex-row w-full h-screen">
