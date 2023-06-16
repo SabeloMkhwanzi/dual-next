@@ -7,7 +7,7 @@ export default function ColorModeButton() {
   return (
     <Group position="center" my="xl">
       <ActionIcon
-        variant="subtle"
+        variant="default"
         radius="lg"
         onClick={() => toggleColorScheme()}
         size="lg"

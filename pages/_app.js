@@ -16,6 +16,7 @@ import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { jsonRpcProvider } from "wagmi/providers/jsonRpc";
 import { filecoin } from "../constants/fil";
+import { PushSupportChat } from "../components";
 
 const { chains, provider, webSocketProvider } = configureChains(
   [filecoin, chain.polygonMumbai, chain.mainnet],
@@ -83,6 +84,7 @@ export default function App(props) {
               >
                 <Component {...pageProps} />
                 <Toaster />
+                <PushSupportChat />
               </LivepeerConfig>
             </RainbowKitProvider>
           </WagmiConfig>

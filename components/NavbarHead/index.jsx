@@ -12,8 +12,7 @@ import {
 //import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import ConnectWallet from "../ConnectWallet";
-import { ColorModeButton, ProjectLogo } from "..";
-//import PushNotifiction from "../PushNotifiction";
+import { ColorModeButton, ProjectLogo, PushNotification } from "..";
 
 const HEADER_HEIGHT = 100;
 
@@ -82,7 +81,7 @@ export default function NavbarHead() {
             <Popover.Target>
               <Button
                 variant="default"
-                radius="md"
+                radius="lg"
                 className={classes.linkLabel}
               >
                 <Text fw="500" fz="md" className="ultra">
@@ -151,23 +150,11 @@ export default function NavbarHead() {
               </Stack>
             </Popover.Dropdown>
           </Popover>
-
-          <Link
-            style={{ color: "inherit", textDecoration: "inherit" }}
-            href="/meetings"
-          >
-            <Button variant="default" radius="md" className={classes.linkLabel}>
-              <Text fw="500" fz="md" className="ultra">
-                {" "}
-                Huddle01
-              </Text>
-            </Button>
-          </Link>
           <Popover trapFocus position="bottom" withArrow shadow="md">
             <Popover.Target>
               <Button
                 variant="default"
-                radius="md"
+                radius="lg"
                 className={classes.linkLabel}
               >
                 <Text fw="500" fz="md" className="ultra">
@@ -242,7 +229,7 @@ export default function NavbarHead() {
             <Popover.Target>
               <Button
                 variant="default"
-                radius="md"
+                radius="lg"
                 className={classes.linkLabel}
               >
                 <Text fw="500" fz="md" className="ultra">
@@ -311,14 +298,70 @@ export default function NavbarHead() {
               </Stack>
             </Popover.Dropdown>
           </Popover>
+          <Popover trapFocus position="bottom" withArrow shadow="md">
+            <Popover.Target>
+              <Button
+                variant="default"
+                radius="lg"
+                className={classes.linkLabel}
+              >
+                <Text fw="500" fz="md" className="ultra">
+                  Chat
+                </Text>
+              </Button>
+            </Popover.Target>
+            <Popover.Dropdown
+              sx={(theme) => ({
+                background:
+                  theme.colorScheme === "dark"
+                    ? theme.colors.dark[7]
+                    : theme.white,
+              })}
+            >
+              <Stack>
+                <Link
+                  //exact="true"
+                  href="/huddle01"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Button
+                    fullWidth
+                    variant="default"
+                    radius="md"
+                    className={classes.linkLabel}
+                  >
+                    <Text fw="500" fz="md" className="ultra">
+                      huddle01 Meeting Room
+                    </Text>
+                  </Button>
+                </Link>
+
+                <Link
+                  exact="true"
+                  href="/pushChatRoom"
+                  style={{ color: "inherit", textDecoration: "inherit" }}
+                >
+                  <Button
+                    fullWidth
+                    variant="default"
+                    radius="md"
+                    className={classes.linkLabel}
+                  >
+                    <Text fw="500" fz="md" className="ultra">
+                      Push Chat
+                    </Text>
+                  </Button>
+                </Link>
+              </Stack>
+            </Popover.Dropdown>
+          </Popover>
+          <ColorModeButton />
         </Group>
 
         <Group className={classes.linkLabel}>
-          {/* <PushNotifiction /> */}
-          <div className={classes.links}>
-            <ColorModeButton />
-          </div>
+          <div className={classes.links}></div>
           <ConnectWallet />
+          <PushNotification />
         </Group>
       </Container>
     </Header>

@@ -11,6 +11,7 @@ import {
   createStyles,
   rem,
   Button,
+  Image,
 } from "@mantine/core";
 
 import rn from "random-number";
@@ -125,7 +126,7 @@ function GamersCard({ artist }) {
   return (
     <div className="relative flex flex-col gap-2">
       <Card p="lg" shadow="xl" className={classes.card} radius="md">
-        <img
+        <Image
           className={classes.imageDisplay}
           src={
             imageUrl

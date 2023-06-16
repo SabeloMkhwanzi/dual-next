@@ -8,6 +8,7 @@ import { FACTORY_ADDRESS, FACTORY_ABI } from "../../constants/index";
 import CollectionCard from "../Collection/CollectionCard";
 import { Button, ActionIcon, Text, Image } from "@mantine/core";
 import { useRouter } from "next/router";
+import { PushSendMsg } from "..";
 
 function GamersPage() {
   const router = useRouter();
@@ -82,19 +83,13 @@ function GamersPage() {
           </div>
           <div className="flex items-center justify-center gap-2 pt-2 cursor-pointer">
             <div className="flex items-center justify-center gap-4 pt-2">
+              <PushSendMsg />
               <Button
                 className="tracking-wider ultra"
                 variant="default"
                 radius="lg"
               >
-                Chat
-              </Button>
-              <Button
-                className="tracking-wider ultra"
-                variant="default"
-                radius="lg"
-              >
-                Dual Challenge
+                Follow
               </Button>
               <Button
                 className="tracking-wider ultra"
@@ -102,7 +97,7 @@ function GamersPage() {
                 radius="lg"
                 leftIcon={<BiGift className="w-5 h-5" />}
               >
-                Send a tip
+                Me Snacks
               </Button>
             </div>
           </div>

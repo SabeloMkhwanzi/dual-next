@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { Button, Center, Group, Text } from "@mantine/core";
 import { IoWallet } from "react-icons/io5";
@@ -39,7 +40,7 @@ export default function ConnectWallet() {
                   <Button
                     radius="md"
                     variant="default"
-                    leftIcon={<IoWallet size={"28px"} color="#00eb88" />}
+                    leftIcon={<IoWallet size={"28px"} color="#4338CA" />}
                     onClick={openConnectModal}
                   >
                     <Text color="gray.5" fw="700" className="ultra">
@@ -69,11 +70,13 @@ export default function ConnectWallet() {
                     )}
                   </Center>
                   <Button
+                    width="fullWidth"
                     radius="md"
                     variant="default"
                     onClick={openAccountModal}
+                    leftIcon={<IoWallet size={"28px"} color="#4338CA" />}
                   >
-                    <Text fw="500" fz="md" color="#00eb88" className="ultra">
+                    <Text color="gray.5" fw="700" className="ultra">
                       {account.displayName}
                     </Text>
                   </Button>

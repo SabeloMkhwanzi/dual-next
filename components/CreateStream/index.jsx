@@ -101,11 +101,11 @@ export default function CreateStream() {
         type: 1, // broadcast
         identityType: 2, // direct payload
         notification: {
-          title: `BubbleStreamr - Presents: ${stream?.name}`,
+          title: `Dual - Presents: ${stream?.name}`,
           body: ``,
         },
         payload: {
-          title: `BubbleStreamr - Presents: ${stream?.name}`,
+          title: `Dual - Presents: ${stream?.name}`,
           body: `Playback id: ${stream?.playbackId}  @ ${moment(
             stream.createdAt
           ).format("MMMM Do YYYY, h:mm:ss a")}`,
