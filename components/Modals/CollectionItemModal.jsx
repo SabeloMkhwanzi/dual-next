@@ -6,6 +6,7 @@ import { pushImgToStorage, putJSONandGetHash } from "../../utils/storage";
 
 import LoadingModal from "../Modals/LoadingModal";
 import { Button } from "@mantine/core";
+import Image from "next/image";
 
 export default function CollectionItemModal({
   setShowForm,
@@ -104,10 +105,10 @@ export default function CollectionItemModal({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-50 transition-opacity" />
+            <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-50" />
           </Transition.Child>
 
-          <div className="fixed z-10 inset-0 overflow-y-auto">
+          <div className="fixed inset-0 z-10 overflow-y-auto">
             <div className="flex items-center justify-center min-h-full p-4 text-center sm:p-0">
               <Transition.Child
                 as={Fragment}
@@ -119,12 +120,12 @@ export default function CollectionItemModal({
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
                 <Dialog.Panel className="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg w-[80%] sm:w-full">
-                  <div className="bg-ld px-4 pt-5 pb-4 sm:p-6 sm:pb-4 w-full">
-                    <div className="sm:flex sm:items-start w-full">
-                      <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                  <div className="w-full px-4 pt-5 pb-4 bg-ld sm:p-6 sm:pb-4">
+                    <div className="w-full sm:flex sm:items-start">
+                      <div className="w-full mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                         <Dialog.Title
                           as="h3"
-                          className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-300"
+                          className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-300"
                         >
                           Please fill in the details of this item
                         </Dialog.Title>
@@ -133,7 +134,7 @@ export default function CollectionItemModal({
                             This item will be added to this collection
                           </p>
                         </div>
-                        <div className="mt-4 flex flex-col space-y-4 items-center justify-center w-full text-ld">
+                        <div className="flex flex-col items-center justify-center w-full mt-4 space-y-4 text-ld">
                           {/* Image Input and Preview Wrapper*/}
                           <div
                             className={
@@ -148,7 +149,7 @@ export default function CollectionItemModal({
                               <div>
                                 <label
                                   htmlFor="profile-image"
-                                  className="flex flex-col items-center justify-center text-sm w-16 square aspect-square rounded-full bg-slate-200 dark:bg-slate-400 cursor-pointer"
+                                  className="flex flex-col items-center justify-center w-16 text-sm rounded-full cursor-pointer square aspect-square bg-slate-200 dark:bg-slate-400"
                                 >
                                   <FiUpload className="text-ld text-[20px]" />
                                   <span className="text-ld text-[10px] cursor-pointer">
@@ -158,7 +159,7 @@ export default function CollectionItemModal({
                                 <input
                                   type="file"
                                   id="profile-image"
-                                  className="text-ld hidden"
+                                  className="hidden text-ld"
                                   accept="image/*"
                                   onChange={handleImageChange}
                                 />
@@ -167,7 +168,7 @@ export default function CollectionItemModal({
                               <div className="pt-2">
                                 <label
                                   htmlFor=""
-                                  className="text-ld text-sm -ml-8 font-medium"
+                                  className="-ml-8 text-sm font-medium text-ld"
                                 >
                                   Set an Item Photo
                                 </label>
@@ -177,20 +178,20 @@ export default function CollectionItemModal({
                             {imageUrl && (
                               <div className="flex flex-col gap-2">
                                 <div className=" w-16 square aspect-square rounded-full border-[3px] border-indigo-600 overflow-hidden">
-                                  <img
+                                  <Image
                                     src={imageUrl}
                                     alt="Preview"
-                                    className="w-full h-full object-center object-cover"
+                                    className="object-cover object-center w-full h-full"
                                   />
                                 </div>
-                                <p className="text-sm text-ld font-medium">
+                                <p className="text-sm font-medium text-ld">
                                   Preview
                                 </p>
                               </div>
                             )}
                           </div>
                           {/* Name */}
-                          <div className="w-full flex flex-col items-start">
+                          <div className="flex flex-col items-start w-full">
                             <label htmlFor="" className="text-xs">
                               <Required />
                               Item Name
@@ -203,7 +204,7 @@ export default function CollectionItemModal({
                             />
                           </div>
                           {/* Description */}
-                          <div className="w-full flex flex-col items-start">
+                          <div className="flex flex-col items-start w-full">
                             <label htmlFor="" className="text-xs">
                               <Required />
                               Description
@@ -216,7 +217,7 @@ export default function CollectionItemModal({
                             />
                           </div>
                           {/* Quantity */}
-                          <div className="w-full flex flex-col items-start">
+                          <div className="flex flex-col items-start w-full">
                             <label htmlFor="" className="text-xs">
                               <Required />
                               Quantity
@@ -230,7 +231,7 @@ export default function CollectionItemModal({
                             />
                           </div>
                           {/* Price */}
-                          <div className="w-full flex flex-col items-start">
+                          <div className="flex flex-col items-start w-full">
                             <label htmlFor="" className="text-xs">
                               <Required />
                               Price(FIL)
@@ -247,7 +248,7 @@ export default function CollectionItemModal({
                       </div>
                     </div>
                   </div>
-                  <div className="bg-ld px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse sm:items-center justify-center">
+                  <div className="justify-center px-4 py-3 bg-ld sm:px-6 sm:flex sm:flex-row-reverse sm:items-center">
                     <Button
                       sx={{ fontFamily: "ultra" }}
                       className="tracking-wider"

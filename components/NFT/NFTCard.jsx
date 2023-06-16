@@ -10,6 +10,7 @@ import {
   Title,
   Center,
 } from "@mantine/core";
+import Image from "next/image";
 
 const useStyles = createStyles((theme) => ({
   card: {
@@ -98,7 +99,7 @@ const NFTCard = ({ uri, contractAddress }) => {
     <div className="relative flex flex-col gap-2">
       <Card shadow="lg" p="xs" radius="md" className={classes.cardBox}>
         <Center>
-          <img
+          <Image
             src={
               itemsImage
                 ? `https://ipfs.io/ipfs/${itemsImage}`
@@ -115,7 +116,7 @@ const NFTCard = ({ uri, contractAddress }) => {
           <Title className="my-2 text-xs text-center">
             {itemsDescription ? itemsDescription : "Loading..."}
           </Title>
-          <Text className="my-2 text-sm text-center tracking-wider ultra">
+          <Text className="my-2 text-sm tracking-wider text-center ultra">
             Valued At: {itemsPrice ? itemsPrice : "Loading..."} FIL
           </Text>
           <Center>

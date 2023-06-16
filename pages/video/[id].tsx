@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { Header, Sidebar } from "../../layout";
+import { HeaderNav, Sidebar } from "../../layout";
 import React, { useEffect, useState } from "react";
 import {
   Background,
@@ -50,7 +50,7 @@ export default function Video() {
     <Background className="flex flex-row w-full">
       <Sidebar updateCategory={undefined} />
       <div className="flex flex-col flex-1">
-        <Header search={undefined} />
+        <HeaderNav search={undefined} />
         {video && (
           <div className="flex flex-col justify-between m-10 lg:flex-row">
             <div className="w-6/6 lg:w-4/6">

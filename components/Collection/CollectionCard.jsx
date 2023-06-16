@@ -4,6 +4,7 @@ import { useProvider, useSigner, useContract } from "wagmi";
 import { COLLECTION_ABI } from "../../constants/index";
 import { getJSONFromFileinCID } from "../../utils/storage";
 import { createStyles, Text, Button, rem, Card } from "@mantine/core";
+import Image from "next/image";
 
 //Mantine-UI Styling
 const useStyles = createStyles((theme) => ({
@@ -74,7 +75,7 @@ const CollectionCard = ({ contract }) => {
   return (
     <figure className="relative flex flex-col flex-wrap items-center w-full overflow-hidden rounded-md">
       <Card shadow="md" p="xs" radius="md" className={classes.cardBox}>
-        <img
+        <Image
           className={classes.card}
           alt="collection"
           src="https://ipfs.io/ipfs/bafkreihnw3llk4qrssj7zx5rojeszg7mcridxamu523ad2a5twfp7b2r2e"

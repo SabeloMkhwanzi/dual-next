@@ -83,7 +83,7 @@ function NewGamerSignUp() {
             <Text mt={2} size="sm" align="center" className="ultra">
               Already Signed?{" "}
               <Link href="/collection/create">
-                <span className="text-blue cursor-pointer ultra underline">
+                <span className="underline cursor-pointer text-blue ultra">
                   Create a collection
                 </span>
               </Link>
@@ -132,7 +132,7 @@ function NewGamerSignUp() {
               {imageUrl && (
                 <div className="flex flex-col gap-2">
                   <div className=" w-16 square aspect-square rounded-full border-[3px] border-indigo-600 overflow-hidden">
-                    <img
+                    <Image
                       src={imageUrl}
                       alt="Preview"
                       className="object-cover object-center w-full h-full"

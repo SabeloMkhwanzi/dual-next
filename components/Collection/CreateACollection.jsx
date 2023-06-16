@@ -8,6 +8,7 @@ import LoadingModal from "../Modals/LoadingModal";
 import toast from "react-hot-toast";
 import MintAllModal from "../Modals/MintAllModal";
 import { Button, Input, Table, Text, Textarea } from "@mantine/core";
+import Image from "next/image";
 
 const CreateACollection = () => {
   const provider = useProvider();
@@ -147,7 +148,7 @@ const CreateACollection = () => {
                     </Text>
                   )}
                   {image && (
-                    <img
+                    <Image
                       src={imageUrl}
                       className="inset-0 z-10 object-cover object-center w-full h-full"
                       alt=""
