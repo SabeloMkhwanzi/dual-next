@@ -1,8 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import { NavbarHead, Footer } from "../../components";
+import { NavbarHead, Footer } from "..";
 import { AppShell, ScrollArea } from "@mantine/core";
-import NFTCard from "../../components/NFT/NFTCard";
+import NFTCard from "../NFT/NFTCard";
 
 export default function nftCollection() {
   return (
