@@ -3,7 +3,7 @@ import Head from "next/head";
 import { NavbarHead, Footer, CollectionPage } from "../../components";
 import { AppShell, ScrollArea } from "@mantine/core";
 
-export default function gamersNftCollection() {
+export default function nftCollection() {
   return (
     <>
       <Head>
