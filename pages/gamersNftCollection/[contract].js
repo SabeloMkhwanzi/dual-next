@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import { NavbarHead, Footer, CollectionPage } from "../components";
+import { NavbarHead, Footer, CollectionPage } from "../../components";
 import { AppShell, ScrollArea } from "@mantine/core";
 
 export default function gamersNftCollection() {
