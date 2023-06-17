@@ -20,10 +20,11 @@ import {
   Accordion,
 } from "@mantine/core";
 import { useFullscreen } from "@mantine/hooks";
-//import HeroVideo from "../HeroVideo";
+import HeroVideo from "../HeroVideo";
 import { IconCopy, IconCheck, IconPlayerPlay } from "@tabler/icons-react";
-//import { showNotification, updateNotification } from "@mantine/notifications";
-//import HeaderTitle from "../HeaderTitle";
+
+import { showNotification, updateNotification } from "@mantine/notifications";
+import HeaderTitle from "../HeaderTitle";
 //import PushChat from "../PushChat";
 
 const useStyles = createStyles((theme) => ({
@@ -126,7 +127,7 @@ export default function CreateStream() {
 
   return (
     <>
-      {/* <HeaderTitle /> */}
+      <HeaderTitle />
       <Center>
         <Box>
           <Text
@@ -192,9 +193,10 @@ export default function CreateStream() {
                     height: 42,
                     paddingLeft: 20,
                     paddingRight: 20,
-
+                    color:
+                      theme.colorScheme === "dark" ? theme.white : theme.black,
                     "&:hover": {
-                      backgroundColor: theme.fn.darken("#00eb88", 0.05),
+                      backgroundColor: theme.fn.darken("#4338CA", 0.05),
                     },
                   },
                   leftIcon: {
@@ -239,7 +241,7 @@ export default function CreateStream() {
                           paddingRight: 20,
 
                           "&:hover": {
-                            backgroundColor: theme.fn.darken("#00eb88", 0.05),
+                            backgroundColor: theme.fn.darken("#4338CA", 0.05),
                           },
                         },
                         leftIcon: {
@@ -271,37 +273,21 @@ export default function CreateStream() {
                         }, 3000);
                       }}
                     >
-                      <Text className="ultra" fw={700} color="black">
+                      <Text
+                        sx={(theme) => ({
+                          color:
+                            theme.colorScheme === "dark"
+                              ? theme.white
+                              : theme.black,
+                        })}
+                        className="ultra"
+                        fw={700}
+                        color="white"
+                      >
                         Push Alerts
                       </Text>
                     </Button>
                   </Tooltip>
-
-                  <Button
-                    fw={500}
-                    fz="lg"
-                    className="ultra"
-                    styles={(theme) => ({
-                      root: {
-                        backgroundColor: "#FF0057",
-                        borderRadius: 10,
-                        height: 42,
-                        paddingLeft: 20,
-                        paddingRight: 20,
-
-                        "&:hover": {
-                          backgroundColor: theme.fn.darken("#00eb88", 0.05),
-                        },
-                      },
-                      leftIcon: {
-                        marginRight: 15,
-                      },
-                    })}
-                    onClick={toggle}
-                    color={fullscreen ? "red" : "blue"}
-                  >
-                    {fullscreen ? "Exit" : "Fullscreen"}
-                  </Button>
 
                   <Box py={15}>
                     <Group mx={10}>
@@ -496,7 +482,7 @@ export default function CreateStream() {
           )
         }
       >
-        {/* <HeroVideo /> */}
+        <HeroVideo />
       </Center>
     </>
   );

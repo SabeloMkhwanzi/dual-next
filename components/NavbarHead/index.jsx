@@ -296,7 +296,7 @@ export default function NavbarHead() {
                 </Link>
                 <Link
                   exact="true"
-                  href="/"
+                  href="/premium"
                   style={{ color: "inherit", textDecoration: "inherit" }}
                 >
                   <Button

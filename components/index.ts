@@ -25,3 +25,5 @@ export { default as SendChatMsg } from "./SendChatMsg";
 export { default as PushSupportChat } from "./PushSupportChat";
 export { default as NotificationItems } from "./NotificationItems";
 export { default as PushNotification } from "./PushNotification";
+export { default as HeaderTitle } from "./HeaderTitle";
+export { default as HeroVideo } from "./HeroVideo";

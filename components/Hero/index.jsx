@@ -82,7 +82,7 @@ export function Hero() {
             </Title>
             <Text color="dimmed" mt="md">
               Empowering Gamers, Unleashing NFTs - Dual, Where Battles Fuel
-              GameFi Success,
+              GameFi Success, A Community driven platform.
             </Text>
 
             <Group mt={30}>

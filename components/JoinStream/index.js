@@ -1,10 +1,18 @@
 import { Player } from "@livepeer/react";
 import { useState } from "react";
-import Script from "next/script";
+//import Script from "next/script";
+import { IconPlayerPlay } from "@tabler/icons-react";
 
 import { JoinStreamButton } from "../JoinStreamButton";
-import { Box, Text, Center, TextInput, createStyles } from "@mantine/core";
-//import HeaderTitle from "../HeaderTitle";
+import {
+  Box,
+  Text,
+  Center,
+  TextInput,
+  createStyles,
+  Button,
+} from "@mantine/core";
+import HeaderTitle from "../HeaderTitle";
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -49,6 +57,7 @@ export default function JoinStream() {
 
   return (
     <>
+      <HeaderTitle />
       <Center>
         <div>
           <Box
@@ -76,31 +85,40 @@ export default function JoinStream() {
                 onChange={(event) => setPlaybackId(event.target.value)}
                 autoComplete="off"
               />
+              <Button
+                fw={700}
+                fz="xl"
+                color="black"
+                className="ultra"
+                rightIcon={
+                  <IconPlayerPlay size={20} color="black" stroke={5} />
+                }
+                styles={(theme) => ({
+                  root: {
+                    backgroundColor: "#00eb88",
+                    borderRadius: 10,
+                    height: 42,
+                    paddingLeft: 20,
+                    paddingRight: 20,
+
+                    "&:hover": {
+                      backgroundColor: theme.fn.darken("#4338CA", 0.05),
+                    },
+                  },
+                  leftIcon: {
+                    marginRight: 15,
+                  },
+                })}
+                onClick={() => {
+                  setRenderPlayer(true);
+                }}
+              >
+                <Text fw={700} fz="xl" color="black" className="ultra">
+                  Watch Stream
+                </Text>
+              </Button>
             </div>
           </Box>
-          <Script id="Subscribe">
-            {`(function(d, s) {
-                var js = d.createElement(s),
-                  sc = d.getElementsByTagName(s)[0];
-                js.src="https://paywall.unlock-protocol.com/static/unlock.latest.min.js";
-                sc.parentNode.insertBefore(js, sc); }(document, "script"));`}
-          </Script>
-          <Script id="unlockProtocalConfig">
-            {`
-            var unlockProtocolConfig = {            
-              "network": 5,
-              "locks": {
-                "0x92ac11a7c4e52edc5980c8f2ee58e931c85ca333": {
-                  "name": "BubbleStreamr"
-                },
-              },
-              "icon": "https://unlock-protocol.com/static/images/svg/unlock-word-mark.svg",
-              "callToAction": {
-                "default": "Please unlock this demo!"
-              }
-            }
-            `}
-          </Script>
           <Box
             my={10}
             hidden={
@@ -110,9 +128,7 @@ export default function JoinStream() {
                 </>
               )
             }
-          >
-            <JoinStreamButton renderPlayer={setRenderPlayerChild} />
-          </Box>
+          ></Box>
           {renderPlayer && (
             <>
               <Box my={5}>

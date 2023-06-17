@@ -15,7 +15,7 @@ const VideoPlayer: React.FC<PlayerProps> = ({ id }) => {
       showTitle={false}
       aspectRatio="16to9"
       controls={{
-        autohide: 100000,
+        autohide: 3000,
       }}
       theme={{
         borderStyles: { containerBorderStyle: "solid" },

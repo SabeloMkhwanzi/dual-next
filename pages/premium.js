@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "next/head";
-import { NavbarHead, Footer } from "../components";
+import { NavbarHead, Footer, PremiumStream } from "../components";
 import { AppShell, ScrollArea } from "@mantine/core";
 
-export default function stream() {
+export default function premium() {
   return (
     <>
       <Head>
@@ -17,7 +17,9 @@ export default function stream() {
       </Head>
 
       <AppShell header={<NavbarHead />} footer={<Footer />}>
-        <ScrollArea> Premium Streams</ScrollArea>
+        <ScrollArea>
+          <PremiumStream />
+        </ScrollArea>
       </AppShell>
     </>
   );

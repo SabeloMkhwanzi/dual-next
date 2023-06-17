@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import React, { useState, useMemo } from "react";
 import { MantineProvider, ColorSchemeProvider } from "@mantine/core";
 import { Toaster } from "react-hot-toast";
+import { Notifications } from "@mantine/notifications";
 // Rainbowkit wallet
 import "@rainbow-me/rainbowkit/styles.css";
 import { RainbowKitProvider, getDefaultWallets } from "@rainbow-me/rainbowkit";
@@ -82,8 +83,11 @@ export default function App(props) {
                 dehydratedState={pageProps?.dehydratedState}
                 client={livepeerClient}
               >
+                <Notifications />
                 <Component {...pageProps} />
+
                 <Toaster />
+
                 <PushSupportChat />
               </LivepeerConfig>
             </RainbowKitProvider>
