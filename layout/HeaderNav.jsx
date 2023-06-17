@@ -7,15 +7,17 @@ import {
   rem,
   Input,
   TextInput,
+  Button,
 } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { IconSearch } from "@tabler/icons-react";
+import { useDisclosure, ActionIcon } from "@mantine/hooks";
+import { IconSearch, IconVideoPlus } from "@tabler/icons-react";
 import {
   ColorModeButton,
   ConnectWallet,
   ProjectLogo,
   PushNotification,
 } from "../components";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   header: {

@@ -30,7 +30,7 @@ export default function UploadInput(props) {
           )}
         </>
       ) : (
-        <p className="dark:text-[#9CA3AF]">
+        <p className="dark:text-[#9CA3AF] ultra">
           Upload {props.isAudio ? "Audio" : "Video"}
         </p>
       )}

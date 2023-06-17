@@ -9,6 +9,7 @@ import lighthouse from "@lighthouse-web3/sdk";
 import { NavbarHead, Footer } from "../../components";
 import { AppShell, Image, ScrollArea } from "@mantine/core";
 import Head from "next/head";
+import { Spinner } from "@chakra-ui/react";
 
 export default function VideosUploader() {
   const [title, setTitle] = useState<string>("");
@@ -89,11 +90,6 @@ export default function VideosUploader() {
       </Head>
       <AppShell
         header={<HeaderNav search={(text: any) => filterData(text)} />}
-        navbar={
-          <Sidebar
-            updateCategory={(category: any) => filterBasedOnCategory(category)}
-          />
-        }
         footer={<Footer />}
       >
         <ScrollArea>
@@ -102,88 +98,86 @@ export default function VideosUploader() {
               {/* <Sidebar updateCategory={undefined} /> */}
               <div className="flex flex-col flex-1">
                 {/* <Header search={undefined} /> */}
-                <div className="flex justify-end mt-5 mr-10">
-                  <p className="mt-2 mr-4 text-black text-md dark:text-white">
-                    {isUploading && " Uploading..."}
-                  </p>
-
+                <div className="flex justify-start mt-5 mr-10">
                   <div className="flex items-center">
                     <button
-                      className="mr-6  rounded-lg border border-gray-600 bg-transparent py-2  px-6  dark:text-[#9CA3AF]"
+                      className="mr-6 ultra  rounded-lg border border-gray-600 bg-transparent py-2  px-6  dark:text-[#9CA3AF]"
                       onClick={() => {
                         goBack();
                       }}
                     >
-                      Discard
+                      Cancel
                     </button>
                     <button
                       onClick={handleSubmit}
                       disabled={isUploading}
                       className={`${
                         isUploading ? "opacity-25" : "opacity-100"
-                      } flex flex-row items-center  justify-between  rounded-lg bg-blue-500 py-2 px-4 text-white hover:bg-blue-700 `}
+                      } flex flex-row items-center ultra  justify-between  rounded-lg bg-blue-500 py-2 px-4 text-white hover:bg-blue-700 `}
                     >
                       <BiCloud />
                       <p className="ml-2">Upload</p>
                     </button>
+                    <p className="mt-2 ml-4 text-black text-md dark:text-white">
+                      {isUploading && " Uploading..."}
+                    </p>
                   </div>
                 </div>
                 <div className="flex flex-col m-10 mt-5 lg:flex-row">
                   <div className="flex flex-col lg:w-3/4 ">
-                    <label className="text-sm text-gray-600  dark:text-[#9CA3AF]">
+                    <label className="text-sm text-gray-600  ultra dark:text-[#9CA3AF]">
                       Title
                     </label>
                     <input
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
-                      placeholder="Rick Astley - Never Gonna Give You Up (Official Music Video)"
-                      className="border-borderWhiteGray mt-2  h-12  w-[90%] rounded-md border bg-transparent p-2 focus:outline-none dark:border-[#444752]  dark:text-white dark:placeholder:text-gray-600"
+                      placeholder="Cyber Nova  - Game Changers Unite"
+                      className="border-borderWhiteGray mt-2  h-12  w-[50%] rounded-md border bg-transparent p-2 focus:outline-none dark:border-[#444752]  dark:text-white dark:placeholder:text-gray-600"
                     />
-                    <label className="mt-10 text-sm text-gray-600 dark:text-[#9CA3AF]">
+                    <label className="mt-10 ultra text-sm text-gray-600 dark:text-[#9CA3AF]">
                       Description
                     </label>
                     <textarea
                       value={description}
                       onChange={(e) => setDescription(e.target.value)}
-                      placeholder="Never Gonna Give You Up was a global smash on its release in July 1987, topping the charts in 25 countries including Rick’s native UK and the US Billboard Hot 100.  It also won the Brit Award for Best single in 1988. Stock Aitken and Waterman wrote and produced the track which was the lead-off single and lead track from Rick’s debut LP “Whenever You Need Somebody."
-                      className="border-borderWhiteGray mt-2  h-32 w-[90%] rounded-md  border bg-transparent p-2 focus:outline-none dark:border-[#444752]  dark:text-white dark:placeholder:text-gray-600"
+                      placeholder="Step into the thrilling world of gaming as a group of passionate gamers embark on an epic quest to unite the virtual realm and the real world. Join them on an exhilarating journey through a series of challenges, where they discover that true strength lies not only in their gaming skills but also in their unbreakable bond as a team. Witness their determination, camaraderie, and the power of gaming to transcend boundaries and create lifelong friendships."
+                      className="border-borderWhiteGray mt-2  h-32 w-[50%] rounded-md  border bg-transparent p-2 focus:outline-none dark:border-[#444752]  dark:text-white dark:placeholder:text-gray-600"
                     />
 
-                    <div className="mt-10 flex w-[90%] flex-row  justify-between">
+                    <div className="mt-10 flex w-[50%] flex-row  justify-between">
                       <div className="flex flex-col w-2/5 ">
-                        <label className="text-sm text-gray-600  dark:text-[#9CA3AF]">
+                        <label className="text-sm ultra text-gray-600  dark:text-[#9CA3AF]">
                           Location
                         </label>
                         <input
                           value={location}
                           onChange={(e) => setLocation(e.target.value)}
                           type="text"
-                          placeholder="Bali - Indonesia"
+                          placeholder="The sprawling urban playground of Neon City"
                           className="border-borderWhiteGray mt-2 h-12 rounded-md  border bg-transparent p-2 focus:outline-none dark:border-[#444752]  dark:text-white dark:placeholder:text-gray-600"
                         />
                       </div>
                       <div className="flex flex-col w-2/5 ">
-                        <label className="text-sm text-gray-600  dark:text-[#9CA3AF]">
+                        <label className="text-sm ultra text-gray-600  dark:text-[#9CA3AF]">
                           Category
                         </label>
                         <select
                           value={category}
                           onChange={(e) => setCategory(e.target.value)}
-                          className=" border-borderWhiteGray mt-2 h-12  rounded-md border bg-transparent p-2 focus:outline-none dark:border-gray-600  dark:text-white dark:text-[#9CA3AF]"
+                          className=" border-borderWhiteGray mt-2 h-12 ultra  rounded-md border bg-transparent p-2 focus:outline-none dark:border-gray-600  dark:text-white dark:text-[#9CA3AF]"
                         >
-                          <option>Music</option>
-                          <option>Sports</option>
+                          <option>Reviews</option>
+                          <option>Walkthroughs</option>
+                          <option>Let Play</option>
+                          <option>Tutorials</option>
                           <option>Gaming</option>
-                          <option>News</option>
-                          <option>Entertainment</option>
                           <option>Education</option>
-                          <option>Science & Technology</option>
-                          <option>Travel</option>
-                          <option>Other</option>
+                          <option>Trending</option>
                         </select>
                       </div>
                     </div>
-                    <label className="mt-10 text-sm  text-gray-600 dark:text-[#9CA3AF]">
+
+                    <label className="mt-10 ultra text-sm ultra text-gray-600 dark:text-[#9CA3AF]">
                       Thumbnail
                     </label>
 
