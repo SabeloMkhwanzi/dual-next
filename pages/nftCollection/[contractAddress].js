@@ -1,7 +1,8 @@
 import React from "react";
 import Head from "next/head";
-import { NavbarHead, Footer, CollectionPage } from "../../components";
+import { NavbarHead, Footer } from "../../components";
 import { AppShell, ScrollArea } from "@mantine/core";
+import NFTCard from "../../components/NFT/NFTCard";
 
 export default function nftCollection() {
   return (
@@ -18,7 +19,7 @@ export default function nftCollection() {
 
       <AppShell header={<NavbarHead />} footer={<Footer />}>
         <ScrollArea>
-          <CollectionPage />
+          <NFTCard />
         </ScrollArea>
       </AppShell>
     </>
