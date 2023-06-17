@@ -142,7 +142,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const mainLinksMockdata = [
-  { icon: IconHome2, label: "Home" },
+  { icon: IconHome2, label: "Home", path: "/" },
   { icon: IconBrandYoutube, label: "Shorts" },
   { icon: IconHistory, label: "History" },
   { icon: IconClockHour4, label: "Watch Later" },

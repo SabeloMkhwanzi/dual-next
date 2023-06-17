@@ -7,6 +7,7 @@ import { pushImgToStorage, putJSONandGetHash } from "../../utils/storage";
 import { useProvider, useSigner, useContract } from "wagmi";
 import { ARTIST_CONTRACT_ADDRESS, ARTIST_ABI } from "../../constants/index";
 import { Button, Image, Input, Text, Textarea, Title } from "@mantine/core";
+import HeaderTitle from "../HeaderTitle";
 
 function NewGamerSignUp() {
   const provider = useProvider();
@@ -74,8 +75,8 @@ function NewGamerSignUp() {
     <>
       {loading ? <LoadingModal /> : null}
       <div className="min-h-screen px-4 pt-6 sm:px-6 lg:px-6">
+        <HeaderTitle />
         <div className="w-full max-w-md mx-auto space-y-4">
-          {/* Title and Logo */}
           <div>
             <Title size="h1" className="ultra" weight={500} align="center">
               Sign up as an Gamer

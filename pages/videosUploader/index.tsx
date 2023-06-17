@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Sidebar, HeaderNav } from "../../layout";
 import { BiCloud, BiPlus } from "react-icons/bi";
-import { Upload } from "../../components";
+import { HeaderTitle, Upload } from "../../components";
 import Background from "../../components/Background";
 import { getContract } from "../../utils/";
 import lighthouse from "@lighthouse-web3/sdk";
@@ -94,6 +94,7 @@ export default function VideosUploader() {
       >
         <ScrollArea>
           <Background className="w-full">
+            <HeaderTitle />
             <div className="flex flex-row w-full h-screen">
               {/* <Sidebar updateCategory={undefined} /> */}
               <div className="flex flex-col flex-1">

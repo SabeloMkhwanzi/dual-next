@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   rem,
 } from "@mantine/core";
+import Link from "next/link";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -29,6 +30,7 @@ const useStyles = createStyles((theme) => ({
   control: {
     [theme.fn.smallerThan("sm")]: {
       width: "100%",
+      color: "#01fee4",
     },
   },
 
@@ -56,29 +58,58 @@ export default function Sponsor() {
         breakpoints={[{ maxWidth: "sm", cols: 1, spacing: 40 }]}
       >
         <Image
-          alt=""
-          src="https://ui.mantine.dev/_next/static/media/image.11cd6c19.svg"
+          alt="FVM logo"
+          src="https://pbs.twimg.com/profile_images/1594644856357650433/zSeH1tX3_400x400.png"
           className={classes.mobileImage}
         />
         <div>
-          <Title className={classes.title}>Something is not right...</Title>
-          <Text color="dimmed" size="lg">
-            Page you are trying to open does not exist. You may have mistyped
-            the address, or the page has been moved to another URL. If you think
-            this is an error contact support.
-          </Text>
-          <Button
-            variant="outline"
-            size="md"
-            mt="xl"
-            className={classes.control}
+          <Title
+            sx={{ fontFamily: "jiggies", letterSpacing: "1px" }}
+            className={classes.title}
           >
-            Get back to home page
-          </Button>
+            Powered by Filecoin
+          </Title>
+          <Text
+            sx={{ fontFamily: "ultra", letterSpacing: "1px" }}
+            color="dimmed"
+            size="md"
+          >
+            A decentralized storage network that aims to store humanity’s most
+            important information.
+          </Text>
+          <br></br>
+          <Text sx={{ fontFamily: "ultra", letterSpacing: "1px" }}>
+            Dual uses a decentralized storage network to securely and
+            efficiently store data, reduce costs, maintain control, and improve
+            resilience against data breaches or loss.
+          </Text>
+          <br></br>
+          <Text sx={{ fontFamily: "ultra", letterSpacing: "1px" }}>
+            Dual provides a platform for users to trade NFTs, build gaming
+            communities, and monetize skills through live streaming and video
+            content. DUEL uses a decentralized storage network like Filecoin to
+            securely and efficiently store user’s data.
+          </Text>
+          <Link href="/">
+            <Button
+              radius="md"
+              variant="outline"
+              sx={{
+                color: "#01fee4",
+                backgroundColor: "#01fee4",
+                borderColor: "#01fee4",
+              }}
+              size="lg"
+              mt="md"
+              className={classes.control}
+            >
+              Let’s Dual
+            </Button>
+          </Link>
         </div>
         <Image
-          alt=""
-          src="https://ui.mantine.dev/_next/static/media/image.11cd6c19.svg"
+          alt="FVM logo"
+          src="https://pbs.twimg.com/profile_images/1594644856357650433/zSeH1tX3_400x400.png"
           className={classes.desktopImage}
         />
       </SimpleGrid>

@@ -1,7 +1,5 @@
 import {
   createStyles,
-  Badge,
-  Group,
   Title,
   Text,
   Card,
@@ -9,26 +7,37 @@ import {
   Container,
   rem,
 } from "@mantine/core";
-import { IconGauge, IconUser, IconCookie } from "@tabler/icons-react";
+import {
+  IconUserSearch,
+  IconCards,
+  IconExchange,
+  IconSocial,
+} from "@tabler/icons-react";
 
 const mockdata = [
   {
-    title: "Extreme performance",
+    title: "Set Up Your Profile",
     description:
-      "This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit",
-    icon: IconGauge,
+      "Once you’ve set up your profile, you’re ready for fun and to experience open opportunities through Web3.",
+    icon: IconUserSearch,
   },
   {
-    title: "Privacy focused",
+    title: "Mint Your NFTs",
     description:
-      "People say it can run at the same speed as lightning striking, Its icy body is so cold, it will not melt even if it is immersed in magma",
-    icon: IconUser,
+      "In your profile, you can mint your NFTs, list them on the platform for other gamers to see, and request a duel challenge for the NFT.",
+    icon: IconCards,
   },
   {
-    title: "No third parties",
+    title: "Trade NFTs",
     description:
-      "They’re popular, but they’re rare. Trainers who show them off recklessly may be targeted by thieves",
-    icon: IconCookie,
+      "On DUEL, you’ll find the best opportunities to trade your NFTs while having fun and building your own community. Monetize your skills through live streaming, video content, and more.",
+    icon: IconExchange,
+  },
+  {
+    title: "Build Your Community",
+    description:
+      "Building a gaming community can be an exciting and rewarding endeavor. That’s why we bring you DUEL.",
+    icon: IconSocial,
   },
 ];
 
@@ -49,7 +58,7 @@ const useStyles = createStyles((theme) => ({
     "&::after": {
       content: '""',
       display: "block",
-      backgroundColor: theme.fn.primaryColor(),
+      backgroundColor: "#01FEE4",
       width: rem(45),
       height: rem(2),
       marginTop: theme.spacing.sm,
@@ -68,7 +77,7 @@ const useStyles = createStyles((theme) => ({
     "&::after": {
       content: '""',
       display: "block",
-      backgroundColor: theme.fn.primaryColor(),
+      backgroundColor: "#01FEE4",
       width: rem(45),
       height: rem(2),
       marginTop: theme.spacing.sm,
@@ -86,11 +95,17 @@ export default function About() {
       className={classes.card}
       padding="xl"
     >
-      <feature.icon size={rem(50)} stroke={2} color={theme.fn.primaryColor()} />
-      <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
+      <feature.icon size={rem(50)} stroke={2} color="#01FFE4" />
+      <Text
+        sx={{ fontFamily: "ultra" }}
+        fz="lg"
+        fw={500}
+        className={classes.cardTitle}
+        mt="md"
+      >
         {feature.title}
       </Text>
-      <Text fz="sm" c="dimmed" mt="sm">
+      <Text sx={{ fontFamily: "ultra" }} fz="sm" c="dimmed" mt="sm">
         {feature.description}
       </Text>
     </Card>
@@ -98,16 +113,29 @@ export default function About() {
 
   return (
     <Container size="lg" py="xl">
-      <Title order={2} className={classes.title} ta="center" mt="sm">
-        Integrate effortlessly with any technology stack
+      <Title
+        sx={{ fontFamily: "jiggies" }}
+        order={2}
+        className={classes.title}
+        ta="center"
+        mt="sm"
+      >
+        The fun begins now for GameFi on the Filecoin ecosystem.
       </Title>
 
-      <Text c="dimmed" className={classes.description} ta="center" mt="md">
-        Every once in a while, you’ll see a Golbat that’s missing some fangs.
+      <Text
+        c="dimmed"
+        sx={{ fontFamily: "ultra" }}
+        className={classes.description}
+        ta="center"
+        mt="md"
+        fs="lg"
+      >
+        Join the GameFi revolution on Filecoin and let the fun begin!
       </Text>
 
       <SimpleGrid
-        cols={3}
+        cols={4}
         spacing="xl"
         mt={50}
         breakpoints={[{ maxWidth: "md", cols: 1 }]}

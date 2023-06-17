@@ -13,6 +13,7 @@ import {
   Button,
 } from "@mantine/core";
 import HeaderTitle from "../HeaderTitle";
+import HeroVideo from "../HeroVideo";
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -130,6 +131,19 @@ export default function PremiumStream() {
             </>
           )}
         </div>
+      </Center>
+      <Center
+        hidden={
+          renderPlayer && (
+            <>
+              <Box my={5}>
+                <Player showTitle title controls playbackId={playbackId} />
+              </Box>
+            </>
+          )
+        }
+      >
+        <HeroVideo />
       </Center>
     </>
   );

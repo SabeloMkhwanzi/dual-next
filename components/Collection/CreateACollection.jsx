@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import MintAllModal from "../Modals/MintAllModal";
 import { Button, Input, Table, Text, Textarea } from "@mantine/core";
 import Image from "next/image";
+import HeaderTitle from "../HeaderTitle";
 
 const CreateACollection = () => {
   const provider = useProvider();
@@ -118,10 +119,11 @@ const CreateACollection = () => {
           setItemsObject={setItemsObject}
         />
       )}
+      <HeaderTitle />
       <div className="w-full min-h-screen p-4 mx-auto text-ld md:py-20 max-w-7xl">
         <Text
           sx={{ color: "white" }}
-          className="pb-4 text-3xl tracking-tighter text-center text-white-700 lg:text-5xl ultra"
+          className="pb-4 text-xl tracking-tighter text-center text-white-700 lg:text-5xl ultra"
         >
           Create a collection
         </Text>
@@ -227,7 +229,11 @@ const CreateACollection = () => {
             <div className="flex items-center justify-center mx-auto">
               <Button
                 onClick={() => setShowForm(true)}
-                sx={{ fontFamily: "ultra" }}
+                sx={{
+                  color: "#01fee4",
+                  backgroundColor: "#01fee4",
+                  borderColor: "#01fee4",
+                }}
                 className="tracking-wider"
                 variant="default"
                 radius="lg"

@@ -1,4 +1,5 @@
 ## Dual
+
 Dual is a specialized social marketplace platform for FVM gamers, with a focus on GameFi. It empowers players to explore and trade the NFTs they earn in games by participating in engaging dual battles, where the winner gets to keep the NFT as a prize.
 
 ### Project Description
@@ -35,3 +36,17 @@ We leverage the decentralized storage of Filecoin through web3.storage to secure
 - We use Livepeer for Gamers to stream there game which also allows audience to view the game challenges.
 - We also used Huddle01 for Gamer to set up meetings for the arrangement.
 - And we also used Push Protocol to send notification when new Collection are uploaded, Push Chat for Gamers to communicate with each other.
+
+            <!-- DUEL ensure that its data is stored securely and efficiently, while
+            also potentially reducing costs associated with data storage.
+            Additionally, using a decentralized storage network allow DUEL to
+            maintain greater control over data and improve its resilience
+            against potential data breaches or loss.
+
+            DUEL could provide users with a platform to trade their NFTs, build
+            their own gaming communities, and monetize their skills through live
+            streaming and video content. By using a decentralized storage
+            network like Filecoin, DUEL could also ensure that users’ data is
+            stored securely and efficiently, giving users greater peace of mind
+            when using the platform.
+          -->

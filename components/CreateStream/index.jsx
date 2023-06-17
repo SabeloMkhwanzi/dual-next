@@ -144,8 +144,7 @@ export default function CreateStream() {
               )
             }
           >
-            Engage with your audience by Creating a Stream and monetization
-            niche
+            Join the GameFi revolution on Filecoin and let the fun begin
           </Text>
         </Box>
       </Center>

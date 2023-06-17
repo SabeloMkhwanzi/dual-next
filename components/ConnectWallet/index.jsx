@@ -40,7 +40,7 @@ export default function ConnectWallet() {
                   <Button
                     radius="md"
                     variant="default"
-                    leftIcon={<IoWallet size={"28px"} color="#4338CA" />}
+                    leftIcon={<IoWallet size={"28px"} color="#01FEE4" />}
                     onClick={openConnectModal}
                   >
                     <Text
@@ -79,7 +79,7 @@ export default function ConnectWallet() {
                     radius="md"
                     variant="default"
                     onClick={openAccountModal}
-                    leftIcon={<IoWallet size={"28px"} color="#4338CA" />}
+                    leftIcon={<IoWallet size={"28px"} color="#01FEE4" />}
                   >
                     <Text
                       style={{ letterSpacing: "0.3px" }}

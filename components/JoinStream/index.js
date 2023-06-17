@@ -1,9 +1,6 @@
 import { Player } from "@livepeer/react";
 import { useState } from "react";
-//import Script from "next/script";
 import { IconPlayerPlay } from "@tabler/icons-react";
-
-import { JoinStreamButton } from "../JoinStreamButton";
 import {
   Box,
   Text,
@@ -13,6 +10,7 @@ import {
   Button,
 } from "@mantine/core";
 import HeaderTitle from "../HeaderTitle";
+import HeroVideo from "../HeroVideo";
 
 const useStyles = createStyles((theme) => ({
   title: {
@@ -102,7 +100,7 @@ export default function JoinStream() {
                     paddingRight: 20,
 
                     "&:hover": {
-                      backgroundColor: theme.fn.darken("#4338CA", 0.05),
+                      backgroundColor: theme.fn.darken("#8454eb", 0.05),
                     },
                   },
                   leftIcon: {
@@ -137,6 +135,20 @@ export default function JoinStream() {
             </>
           )}
         </div>
+      </Center>
+
+      <Center
+        hidden={
+          renderPlayer && (
+            <>
+              <Box my={5}>
+                <Player showTitle title controls playbackId={playbackId} />
+              </Box>
+            </>
+          )
+        }
+      >
+        <HeroVideo />
       </Center>
     </>
   );

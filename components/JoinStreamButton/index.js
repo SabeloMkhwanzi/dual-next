@@ -69,7 +69,7 @@ export class JoinStreamButton extends React.Component {
                   paddingRight: 20,
 
                   "&:hover": {
-                    backgroundColor: theme.fn.darken("#4338CA", 0.05),
+                    backgroundColor: theme.fn.darken("#8454eb", 0.05),
                   },
                 },
                 leftIcon: {

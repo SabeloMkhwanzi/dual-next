@@ -63,38 +63,37 @@ export default function FooterPage() {
               Home
             </Text>
           </Link>
-
           <Link
             style={{ color: "inherit", textDecoration: "inherit" }}
             exact="true"
-            href="/collection/create"
+            href="/gamer"
           >
-            <Text className="ultra"> Create collection</Text>
+            <Text className="ultra">Gamers</Text>
           </Link>
           <Link
             style={{ color: "inherit", textDecoration: "inherit" }}
-            href="/meetingroom"
+            href="/joinLiveStream"
           >
-            <Text className="ultra"> Meeting Room</Text>
+            <Text className="ultra">Stream</Text>
           </Link>
           <Link
             style={{ color: "inherit", textDecoration: "inherit" }}
-            href="/Streamroom"
+            href="/videosHome"
           >
-            <Text className="ultra"> Stream Room</Text>
+            <Text className="ultra">Video</Text>
           </Link>
         </Group>
 
         <Group spacing="xs" position="right" noWrap>
           <ActionIcon
             mx={13}
-            color="#8892B0"
+            color="#01FEE4"
             component="a"
             href="https://github.com/SabeloMkhwanzi"
             target="_blank"
             variant="subtle"
           >
-            <IconBrandGithub color="#00eb88" size={30} />
+            <IconBrandGithub color="#01FEE4" size={30} />
           </ActionIcon>
           <ActionIcon
             mx={13}
@@ -102,7 +101,7 @@ export default function FooterPage() {
             href="https://twitter.com/SabeloMkhwanaz"
             target="_blank"
           >
-            <IconBrandTwitter color="#00eb88" size={30} />
+            <IconBrandTwitter color="#01FEE4" size={30} />
           </ActionIcon>
           <ActionIcon
             mx={13}
@@ -110,7 +109,7 @@ export default function FooterPage() {
             href="https://www.linkedin.com/in/sabelo-mkhwanazi-54ba431b1/"
             target="_blank"
           >
-            <IconBrandLinkedin color="#00eb88" size={30} />
+            <IconBrandLinkedin color="#01FEE4" size={30} />
           </ActionIcon>
         </Group>
       </div>
