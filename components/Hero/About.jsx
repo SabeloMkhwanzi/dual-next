@@ -30,13 +30,13 @@ const mockdata = [
   {
     title: "Trade NFTs",
     description:
-      "On DUEL, you’ll find the best opportunities to trade your NFTs while having fun and building your own community. Monetize your skills through live streaming, video content, and more.",
+      "On DUAL, you’ll find the best opportunities to trade your NFTs while having fun and building your own community. Monetize your skills through live streaming, video content, and more.",
     icon: IconExchange,
   },
   {
     title: "Build Your Community",
     description:
-      "Building a gaming community can be an exciting and rewarding endeavor. That’s why we bring you DUEL.",
+      "Building a gaming community can be an exciting and rewarding endeavor. That’s why we bring you DUAL.",
     icon: IconSocial,
   },
 ];

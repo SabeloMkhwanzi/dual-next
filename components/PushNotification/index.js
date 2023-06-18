@@ -25,7 +25,7 @@ export default function PushNotification() {
   const OptInChannel = async () => {
     await PushSDK.channels.subscribe({
       signer: signer,
-      channelAddress: "eip155:5:0xD8634C39BBFd4033c0d3289C4515275102423681",
+      channelAddress: "eip155:5:0x2BE1CA5900044187536D31B1a28cC6bb2bd88772",
       userAddress: `${address}`,
       onSuccess: () => {
         console.log("opt in success");

@@ -87,7 +87,7 @@ export default function Sponsor() {
           <Text sx={{ fontFamily: "ultra", letterSpacing: "1px" }}>
             Dual provides a platform for users to trade NFTs, build gaming
             communities, and monetize skills through live streaming and video
-            content. DUEL uses a decentralized storage network like Filecoin to
+            content. Dual uses a decentralized storage network like Filecoin to
             securely and efficiently store user’s data.
           </Text>
           <Link href="/">

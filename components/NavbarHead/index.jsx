@@ -12,7 +12,12 @@ import {
 //import { useDisclosure } from "@mantine/hooks";
 import Link from "next/link";
 import ConnectWallet from "../ConnectWallet";
-import { ColorModeButton, ProjectLogo, PushNotification } from "..";
+import {
+  ColorModeButton,
+  ProjectLogo,
+  PushNotification,
+  PushSubscribe,
+} from "..";
 
 const HEADER_HEIGHT = 100;
 
@@ -375,6 +380,7 @@ export default function NavbarHead() {
               </Stack>
             </Popover.Dropdown>
           </Popover>
+          {/* <PushSubscribe /> */}
         </Group>
 
         <Group className={classes.linkLabel}>

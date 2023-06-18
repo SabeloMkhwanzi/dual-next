@@ -124,7 +124,7 @@ export function Hero() {
             </Title>
             <Text size="lg" className="ultra" color="dimmed" mt="md">
               Empower your inner gamer and unleash the potential of NFTs with
-              DUEL - where epic battles fuel GameFi success. Join our thriving
+              Dual - where epic battles fuel GameFi success. Join our thriving
               social platform and discover a world of community and opportunity
             </Text>
 

@@ -6,10 +6,19 @@ import { HeaderTitle, Upload } from "../../components";
 import Background from "../../components/Background";
 import { getContract } from "../../utils/";
 import lighthouse from "@lighthouse-web3/sdk";
-import { NavbarHead, Footer } from "../../components";
+import { Footer } from "../../components";
 import { AppShell, Image, ScrollArea } from "@mantine/core";
 import Head from "next/head";
-import { Spinner } from "@chakra-ui/react";
+import * as PushAPI from "@pushprotocol/restapi";
+import * as ethers from "ethers";
+import { ENV } from "@pushprotocol/restapi/src/lib/constants";
+import Link from "next/link";
+
+const env = ENV.STAGING;
+
+const PK = process.env.NEXT_PUBLIC_APP_CHANNEL_PK; // channel private key
+const Pkey = `0x${PK}`;
+const signer = new ethers.Wallet(Pkey);
 
 export default function VideosUploader() {
   const [title, setTitle] = useState<string>("");
@@ -77,6 +86,36 @@ export default function VideosUploader() {
     throw new Error("Function not implemented.");
   }
 
+  // Push Notification function
+  const sendNotification = async () => {
+    try {
+      // apiResponse?.status === 204, if sent successfully!
+      const apiResponse = await PushAPI.payloads.sendNotification({
+        signer,
+        type: 1, // broadcast
+        identityType: 2, // direct payload
+        notification: {
+          title: `Dual - Presents: New Video `,
+          body: ``,
+        },
+        payload: {
+          title: `Dual - Presents: New Video`,
+          body: `Join the GameFi revolution let's play, earn & enjoy `,
+          cta: "",
+          img: "",
+        },
+        recipients: "eip155:5:0x2BE1CA5900044187536D31B1a28cC6bb2bd88772", // recipient address
+        channel: "eip155:5:0x2BE1CA5900044187536D31B1a28cC6bb2bd88772", // your channel address
+        env: env as ENV,
+      });
+
+      // apiResponse?.status === 204, if sent successfully!
+      console.log("API response: ", apiResponse);
+    } catch (err) {
+      console.error("Error: ", err);
+    }
+  };
+
   return (
     <>
       <Head>
@@ -110,7 +149,10 @@ export default function VideosUploader() {
                       Cancel
                     </button>
                     <button
-                      onClick={handleSubmit}
+                      onClick={() => {
+                        sendNotification();
+                        handleSubmit;
+                      }}
                       disabled={isUploading}
                       className={`${
                         isUploading ? "opacity-25" : "opacity-100"
@@ -119,6 +161,11 @@ export default function VideosUploader() {
                       <BiCloud />
                       <p className="ml-2">Upload</p>
                     </button>
+                    <Link href="/videosHome">
+                      <button className="ml-6 ultra  rounded-lg border border-gray-600 bg-transparent py-2  px-6  dark:text-[#9CA3AF]">
+                        Videos
+                      </button>
+                    </Link>
                     <p className="mt-2 ml-4 text-black text-md dark:text-white">
                       {isUploading && " Uploading..."}
                     </p>

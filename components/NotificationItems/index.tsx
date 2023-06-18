@@ -24,6 +24,9 @@ export default function NotificationItems({ notifications, OptInChannel }) {
         <Menu.Dropdown>
           <center>
             <Button
+              onClick={() => {
+                OptInChannel;
+              }}
               // Subscribe LOGIC HERE
               variant="outline"
               color="green"
