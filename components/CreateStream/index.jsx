@@ -469,7 +469,7 @@ export default function CreateStream() {
         </Box>
       </Center>
 
-      <Center
+      {/* <Center
         hidden={
           stream?.playbackId && (
             <Player
@@ -482,7 +482,7 @@ export default function CreateStream() {
         }
       >
         <HeroVideo />
-      </Center>
+      </Center> */}
     </>
   );
 }

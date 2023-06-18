@@ -137,7 +137,7 @@ export default function JoinStream() {
         </div>
       </Center>
 
-      <Center
+      {/* <Center
         hidden={
           renderPlayer && (
             <>
@@ -149,7 +149,7 @@ export default function JoinStream() {
         }
       >
         <HeroVideo />
-      </Center>
+      </Center> */}
     </>
   );
 }
