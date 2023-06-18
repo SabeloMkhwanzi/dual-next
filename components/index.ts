@@ -27,4 +27,3 @@ export { default as NotificationItems } from "./NotificationItems";
 export { default as PushNotification } from "./PushNotification";
 export { default as HeaderTitle } from "./HeaderTitle";
 export { default as HeroVideo } from "./HeroVideo";
-export { default as PushSubscribe } from "./PushSubscribe";
