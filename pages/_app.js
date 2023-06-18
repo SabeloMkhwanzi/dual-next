@@ -56,7 +56,7 @@ export default function App(props) {
   const livepeerClient = useMemo(() => {
     return createReactClient({
       provider: studioProvider({
-        apiKey: process.env.NEXT_PUBLIC_STUDIO_API_KEY,
+        apiKey: "dadde617-9ad0-4d2d-9a7d-dce2c838bf8d", //process.env.NEXT_PUBLIC_STUDIO_API_KEY,
       }),
     });
   }, []);
