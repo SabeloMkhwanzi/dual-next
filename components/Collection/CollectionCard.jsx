@@ -3,8 +3,7 @@ import Link from "next/link";
 import { useProvider, useSigner, useContract } from "wagmi";
 import { COLLECTION_ABI } from "../../constants/index";
 import { getJSONFromFileinCID } from "../../utils/storage";
-import { createStyles, Text, Button, rem, Card } from "@mantine/core";
-import Image from "next/image";
+import { createStyles, Text, Button, rem, Card, Image } from "@mantine/core";
 
 //Mantine-UI Styling
 const useStyles = createStyles((theme) => ({

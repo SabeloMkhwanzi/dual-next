@@ -239,7 +239,7 @@ export default function NavbarHead() {
               </Stack>
             </Popover.Dropdown>
           </Popover>
-          <ColorModeButton />
+
           <Popover trapFocus position="bottom" withArrow shadow="md">
             <Popover.Target>
               <Button
@@ -385,6 +385,7 @@ export default function NavbarHead() {
 
         <Group className={classes.linkLabel}>
           <div className={classes.links}></div>
+          <ColorModeButton />
           <ConnectWallet />
           <PushNotification />
         </Group>

@@ -9,6 +9,7 @@ import CollectionCard from "../Collection/CollectionCard";
 import { Button, ActionIcon, Text, Image } from "@mantine/core";
 import { useRouter } from "next/router";
 import { PushSendMsg } from "..";
+import Link from "next/link";
 
 function GamersPage() {
   const router = useRouter();
@@ -83,7 +84,15 @@ function GamersPage() {
           </div>
           <div className="flex items-center justify-center gap-2 pt-2 cursor-pointer">
             <div className="flex items-center justify-center gap-4 pt-2">
-              <PushSendMsg />
+              <Link href="/pushChatRoom">
+                <Button
+                  className="tracking-wider ultra"
+                  variant="default"
+                  radius="lg"
+                >
+                  Send me Message
+                </Button>
+              </Link>
               <Button
                 className="tracking-wider ultra"
                 variant="default"

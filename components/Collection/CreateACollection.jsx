@@ -7,8 +7,7 @@ import { pushImgToStorage, putJSONandGetHash } from "../../utils/storage";
 import LoadingModal from "../Modals/LoadingModal";
 import toast from "react-hot-toast";
 import MintAllModal from "../Modals/MintAllModal";
-import { Button, Input, Table, Text, Textarea } from "@mantine/core";
-import Image from "next/image";
+import { Button, Input, Table, Text, Textarea, Image } from "@mantine/core";
 import HeaderTitle from "../HeaderTitle";
 
 const CreateACollection = () => {

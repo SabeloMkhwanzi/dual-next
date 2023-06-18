@@ -1,61 +1,14 @@
-import CustomButton from "./CustomButton";
-import { Box, Textarea } from "@mantine/core";
+import { Textarea, Button, Modal, Center, Box, Text } from "@mantine/core";
 import { useState, useRef, useEffect } from "react";
 import * as PushAPI from "@pushprotocol/restapi";
 import { ethers } from "ethers";
 import { useAccount } from "wagmi";
 import { useSearchParams } from "next/navigation";
-
-function MessageLeft({ text }) {
-  return (
-    <Box
-      sx={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "flex-start",
-        my: "10px",
-      }}
-    >
-      <Box
-        sx={{
-          backgroundColor: "#289935",
-          px: "15px",
-          borderRadius: "20px",
-          color: "white",
-        }}
-      >
-        <h4>{text}</h4>
-      </Box>
-    </Box>
-  );
-}
-
-function MessageRight({ text }) {
-  return (
-    <Box
-      sx={{
-        width: "100%",
-        display: "flex",
-        justifyContent: "flex-end",
-        my: "10px",
-      }}
-    >
-      <Box
-        sx={{
-          backgroundColor: "#289935",
-          px: "15px",
-          color: "white",
-          borderRadius: "20px",
-        }}
-      >
-        <h4>{text}</h4>
-      </Box>
-    </Box>
-  );
-}
+import HeaderTitle from "../HeaderTitle";
 
 function SendMessage({ onSend }) {
   const [message, setMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleSubmit = () => {
     onSend(message);
@@ -64,24 +17,52 @@ function SendMessage({ onSend }) {
 
   return (
     <>
-      <Textarea
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
-        variant="filled"
-        sx={{
-          width: "95%",
-          height: "95%",
-          mr: "15px",
-          backgroundColor: "whitesmoke",
-          borderRadius: "10px",
-        }}
-      />
-      <CustomButton text="Send" onClick={() => handleSubmit()} />
+      <div>
+        <Button
+          className="tracking-wider ultra"
+          variant="default"
+          radius="lg"
+          onClick={() => setIsModalOpen(true)}
+        >
+          Send A Message
+        </Button>
+        <Modal
+          radius="lg"
+          opened={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          title="Send Message via Push Protocol"
+          transitionProps={{ transition: "fade", duration: 200 }}
+        >
+          <Textarea
+            my={5}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Write your message"
+          />
+          <Button
+            my={5}
+            className="tracking-wider ultra"
+            variant="default"
+            radius="lg"
+            onClick={() => handleSubmit()}
+          >
+            Send
+          </Button>
+        </Modal>
+      </div>
     </>
   );
 }
 
 export default function Chat() {
+  const [message, setMessage] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleSubmit = () => {
+    onSend(message);
+    setMessage("");
+  };
+
   const searchParams = useSearchParams();
   const creatorAddress = searchParams.get("creatorAddress");
   const { address } = useAccount();
@@ -209,52 +190,16 @@ export default function Chat() {
   }, []);
 
   return (
-    <Box
-      p={2}
-      sx={{
-        width: "50%",
-        height: { sx: "calc(100vh - 80px)", md: "calc(83vh)" },
-        marginLeft: { sx: 0, md: "14%" },
-        marginTop: { sx: "80px", md: 0 },
-        px: { sx: 2, md: 4 },
-        overflow: "auto",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "flex-start",
-        justifyContent: "center",
-      }}
-    >
-      <Box
-        sx={{
-          width: "98%",
-          height: "90vh",
-          overflow: "auto",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-end",
-          m: "10px",
-        }}
-      >
-        {messages.map((message, index) =>
-          message.side === "left" ? (
-            <MessageLeft key={index} text={message.text} />
-          ) : (
-            <MessageRight key={index} text={message.text} />
-          )
-        )}
-        <span ref={dummy}></span>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          height: "10%",
-          m: "10px",
-          width: "98%",
-          zIndex: 10,
-        }}
-      >
-        <SendMessage onSend={handlePushSendMessage} />
-      </Box>
-    </Box>
+    <>
+      <HeaderTitle />
+      <Center>
+        <Box mt={60}>
+          <Text my={30} size="lg" className="ultra" color="dimmed" mt="md">
+            Welcome to Push Chat
+          </Text>
+          <SendMessage onSend={handlePushSendMessage} />
+        </Box>
+      </Center>
+    </>
   );
 }

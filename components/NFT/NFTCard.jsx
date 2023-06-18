@@ -9,8 +9,8 @@ import {
   Card,
   Title,
   Center,
+  Image,
 } from "@mantine/core";
-import Image from "next/image";
 
 const useStyles = createStyles((theme) => ({
   card: {
