@@ -1,8 +1,7 @@
 import { Player } from "@livepeer/react";
 import { Container, createStyles } from "@mantine/core";
 
-const playbackId =
-  "ipfs://bafybeih4t7hzoarlu3vk6gpxjqwdfii5mjkdix32ruojyivwvplp3w5rwy";
+const playbackId = "ipfs://QmfSkdBa7VBT1nrkF54n2XTvk5u6KMunmrED4p5dfGbTMr";
 
 const useStyles = createStyles((theme) => ({
   Paper: {
