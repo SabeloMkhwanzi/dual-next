@@ -16,6 +16,11 @@ Our platform is dedicated to empowering gamers to trade their collections on the
 
 We leverage the decentralized storage of Filecoin through web3.storage to securely and reliably store gamers' profiles and their collection data. This ensures that gamers' information and collections are effectively stored in a secure and persistent manner
 
+Dual ensure that its data is stored securely and efficiently, while also potentially reducing costs associated with data storage.Additionally, using a decentralized storage network allow DUEL to maintain greater control over data and improve its resilience against potential data breaches or loss.
+
+Dual could provide users with a platform to trade their NFTs, build their own gaming communities, and monetize their skills through live streaming and video content. By using a decentralized storage network like Filecoin, Dual could also ensure that users data is stored securely and efficiently, giving users greater peace of mind when using the platform.
+
+
 ### How it's Made
 
 #### Smart Contract
